@@ -119,6 +119,10 @@ publishing {
         }
     }
     repositories {
+	    maven {
+        name = "journeymap"
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
         maven {
             url "file:///${project.projectDir}/mcmodsrepo"
         }
