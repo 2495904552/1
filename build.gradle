@@ -55,7 +55,11 @@ minecraft {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
     compile group: "info.journeymap", name: "journeymap-api", version: '1.12-1.4', changing: true
+<<<<<<< HEAD
     implementation "curse.maven:journeymap-32274:2916002"
+=======
+    runtime "curse.maven:journeymap-32274:2916002"
+>>>>>>> 358427fc82b77aa9611a54724c1b00e83b723928
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"
