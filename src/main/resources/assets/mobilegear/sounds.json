@@ -1,0 +1,51 @@
+{
+  "turn_off": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:turn_off"
+    ]
+  },
+  "turn_on": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:turn_on"
+    ]
+  },
+  "battery": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:battery"
+    ]
+  },
+  "lowpower": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:lowpower"
+    ]
+  },
+  "send": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:send"
+    ]
+  },
+  "open": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:open"
+    ]
+  },
+  "beep": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:beep"
+    ]
+  },
+  "tuning": {
+    "category": "player",
+    "sounds": [
+      "mobilegear:tuning"
+    ]
+  }
+}
+

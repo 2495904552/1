@@ -1,0 +1,6 @@
+item.radio.name=radio
+item.map3d.name=map
+mobilegear:server.chan.usage=/chan <频道数字>
+mobilegear:electricity=电量
+mobilegear:shift=按住shift更换电池
+mobilegear:chan=使用/chan更换频道
