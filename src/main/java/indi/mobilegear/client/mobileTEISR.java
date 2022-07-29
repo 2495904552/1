@@ -376,7 +376,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
       if (intValue > 3)
         fixScale = scale / 8.0D; 
       GlStateManager.bindTexture(textureimpl.getGlTextureId());
-      drawQuad((ResourceLocation)null, 16777215, 1.0F, sector.minX - x1 + ((region[0] < 0) ? true : false), sector.minZ - z1 + ((region[1] < 0) ? true : false), width * fixScale, height * fixScale, 0.0D, 0.0D, 1.0D, 1.0D, 0.0D, false, true, 770, 771, true);
+      drawQuad((ResourceLocation)null, 16777215, 1.0F, sector.minX - x1 + (region[0] < 0 ? 1 : 0), sector.minZ - z1 + (region[1] < 0 ? 1 : 0), width * fixScale, height * fixScale, 0.0D, 0.0D, 1.0D, 1.0D, 0.0D, false, true, 770, 771, true);
       textureimpl.deleteGlTexture();
     } 
   }

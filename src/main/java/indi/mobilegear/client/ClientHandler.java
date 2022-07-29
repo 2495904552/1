@@ -118,14 +118,14 @@ public class ClientHandler {
   
   @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
   public void registerSoundEvents(RegistryEvent.Register<SoundEvent> event) {
-    event.getRegistry().registerAll((IForgeRegistryEntry[])new SoundEvent[] { MobileGearMod.soundEvents.getBattery(), MobileGearMod.soundEvents
+    event.getRegistry().registerAll(MobileGearMod.soundEvents.getBattery(), MobileGearMod.soundEvents
           .getBeep(), MobileGearMod.soundEvents
           .getLowPower(), MobileGearMod.soundEvents
           .getOpen(), MobileGearMod.soundEvents
           .getSend(), MobileGearMod.soundEvents
           .getTuning(), MobileGearMod.soundEvents
           .getTurn_off(), MobileGearMod.soundEvents
-          .getTurn_on() });
+          .getTurn_on());
   }
   
   public static String chanRegx = "\\[ch:\\d+\\]";

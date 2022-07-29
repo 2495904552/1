@@ -53,6 +53,8 @@ minecraft {
 }
 
 dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.jetbrains:annotations:20.1.0'
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
     compile group: "info.journeymap", name: "journeymap-api", version: '1.12-1.4', changing: true
     implementation "curse.maven:journeymap-32274:2916002"
