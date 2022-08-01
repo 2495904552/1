@@ -2,6 +2,8 @@ package indi.mobilegear.common;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -31,18 +33,17 @@ public class RegistryHandler {
   
   @SubscribeEvent
   public static void onBlockRegister(RegistryEvent.Register<Block> event) {
-    event.getRegistry().registerAll(BLOCKS.toArray(new Block[0]);
+    event.getRegistry().registerAll(BLOCKS.toArray(new Block[0]));
   }
   
   @SubscribeEvent
   public static void onItemRegister(RegistryEvent.Register<Item> event) {
-    event.getRegistry().registerAll(ITEMS.toArray(new Item[0]);
+    event.getRegistry().registerAll(ITEMS.toArray(new Item[0]));
   }
   
   @SubscribeEvent
   public static void onModelRegister(ModelRegistryEvent event) {
     for (Item item : ITEMS)
-      ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "invenroty")); 
-    for (Block block : BLOCKS);
+      ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "invenroty"));
   }
 }
