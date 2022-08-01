@@ -295,10 +295,9 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
   private void drawAddtionLayers(double xOffset, double yOffset) {
     Minecraft mc = Minecraft.getMinecraft();
     EntityPlayerSP player = mc.player;
-    //this;
     int intValue = zoomValue;
-    int aWidth = 360;
-    int aHeight = 261;
+    int aWidth = 330;//3D地图宽度
+    int aHeight = 246;//3D地图高度
     int Wx = 0, Wz = 0;
     int x1 = (int)player.posX - aWidth / 2;
     int z1 = (int)player.posZ - aHeight / 2;
