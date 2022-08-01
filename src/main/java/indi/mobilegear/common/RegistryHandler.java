@@ -25,24 +25,24 @@ public class RegistryHandler {
   public static List<EntityEntry> ENTITIES = new ArrayList<>();
   
   public static int ENTITYID = 0;
-
+  
   @SubscribeEvent
   public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {}
-
+  
   @SubscribeEvent
   public static void onBlockRegister(RegistryEvent.Register<Block> event) {
-    event.getRegistry().registerAll();BLOCKS.toArray(new Block[0]);
+    event.getRegistry().registerAll(BLOCKS.toArray(new Block[0]);
   }
-
+  
   @SubscribeEvent
   public static void onItemRegister(RegistryEvent.Register<Item> event) {
-    event.getRegistry().registerAll();ITEMS.toArray(new Item[0]);
+    event.getRegistry().registerAll(ITEMS.toArray(new Item[0]);
   }
   
   @SubscribeEvent
   public static void onModelRegister(ModelRegistryEvent event) {
     for (Item item : ITEMS)
-      ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "invenroty"));
+      ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "invenroty")); 
     for (Block block : BLOCKS);
   }
 }
