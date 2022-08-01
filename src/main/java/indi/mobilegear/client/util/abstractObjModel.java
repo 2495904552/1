@@ -5,11 +5,14 @@ import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.util.math.Vec2f;
 
 public abstract class abstractObjModel {
-  public abstract boolean renderNormal(String paramString, BufferBuilder paramBufferBuilder);
-  
-  public abstract boolean renderNormal(BufferBuilder paramBufferBuilder);
-  
-  public abstract boolean renderNormal(BufferBuilder paramBufferBuilder, int[] paramArrayOfint, int paramInt);
-  
-  public abstract void renderReUV(BufferBuilder paramBufferBuilder, UnaryOperator<Vec2f> paramUnaryOperator);
+  public abstractObjModel() {
+  }
+
+  public abstract boolean renderNormal(String var1, BufferBuilder var2);
+
+  public abstract boolean renderNormal(BufferBuilder var1);
+
+  public abstract boolean renderNormal(BufferBuilder var1, int[] var2, int var3);
+
+  public abstract void renderReUV(BufferBuilder var1, UnaryOperator<Vec2f> var2);
 }
