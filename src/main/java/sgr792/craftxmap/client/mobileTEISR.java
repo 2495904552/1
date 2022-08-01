@@ -1,7 +1,7 @@
-package indi.mobilegear.client;
+package sgr792.craftxmap.client;
 
-import indi.mobilegear.MobileGearMod;
-import indi.mobilegear.client.util.abstractObjModel;
+import sgr792.craftxmap.CraftxMapMod;
+import sgr792.craftxmap.client.util.abstractObjModel;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -56,9 +56,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
   private static abstractObjModel map3d = null;
   
   private static abstractObjModel radio = null;
-  
-  private static abstractObjModel echo = null;
-  
+
   private static final GridRenderer gridRenderer = new GridRenderer(Context.UI.Minimap, 3);
   
   private static final MapState state = new MapState();
@@ -179,7 +177,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
           NBTTagCompound nbt = itemStackIn.getTagCompound();
           switchOn = nbt.getBoolean("Switch");
           float f1 = nbt.getInteger("Battery");
-          float f2 = MobileGearMod.config.getBattery_time();
+          float f2 = CraftxMapMod.config.getBattery_time();
           if (nbt.hasKey("Battery"))
             charge = (int)(f1 / f2 * 100.0F); 
           if (nbt.hasKey("Channel"))
@@ -573,8 +571,6 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
     if (map3d == null)
       map3d = MobileGearModelLoader.loader.getModel("map3d"); 
     if (radio == null)
-      radio = MobileGearModelLoader.loader.getModel("radio"); 
-    if (echo == null)
-      echo = MobileGearModelLoader.loader.getModel("echo"); 
+      radio = MobileGearModelLoader.loader.getModel("radio");
   }
 }

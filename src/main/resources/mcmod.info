@@ -1,16 +1,16 @@
 [
-{
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "1.0",
-  "mcversion": "1.12.2",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "mobilegear",
+    "name": "Craftx Map Mod",
+    "description": "Craftx服务器专用Mod.",
+    "version": "1.0",
+    "mcversion": "1.12.2",
+    "url": "https://ww.craftx.cn/",
+    "updateUrl": "",
+    "authorList": ["Sgr792"],
+    "credits": "The Forge and FML guys, for making this example",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]

@@ -1,4 +1,4 @@
-package indi.mobilegear.client.util;
+package sgr792.craftxmap.client.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,6 +1,6 @@
-package indi.mobilegear.client;
+package sgr792.craftxmap.client;
 
-import indi.mobilegear.client.util.ObjModelLoader;
+import sgr792.craftxmap.client.util.ObjModelLoader;
 import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ICustomModelLoader;

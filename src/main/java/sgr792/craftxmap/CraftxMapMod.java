@@ -1,14 +1,14 @@
-package indi.mobilegear;
+package sgr792.craftxmap;
 
 import com.google.common.io.Files;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import indi.mobilegear.client.ClientHandler;
-import indi.mobilegear.client.MobileGearModelLoader;
-import indi.mobilegear.client.mobileTEISR;
-import indi.mobilegear.common.RegistryHandler;
-import indi.mobilegear.common.items.ItemMap3D;
-import indi.mobilegear.common.items.ItemRadio;
+import sgr792.craftxmap.client.ClientHandler;
+import sgr792.craftxmap.client.MobileGearModelLoader;
+import sgr792.craftxmap.client.mobileTEISR;
+import sgr792.craftxmap.common.RegistryHandler;
+import sgr792.craftxmap.common.items.ItemMap3D;
+import sgr792.craftxmap.common.items.ItemRadio;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import net.minecraft.client.Minecraft;
@@ -28,15 +28,15 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = "mobilegear", name = "Mobile Gear Mod", version = "1.0", acceptedMinecraftVersions = "[1.12.2]")
-public class MobileGearMod {
+@Mod(modid = "mobilegear", name = "Craftx Map Mod", version = "1.0", acceptedMinecraftVersions = "[1.12.2]")
+public class CraftxMapMod {
   public static final File MinecraftDirectory = getMinecraftDirectory();
   
   public static final String DEV_MINECRAFT_DIR = "run/";
   
   public static final String MODID = "mobilegear";
   
-  public static final String NAME = "Mobile Gear Mod";
+  public static final String NAME = "Craftx Map Mod";
   
   public static final String VERSION = "1.0";
   

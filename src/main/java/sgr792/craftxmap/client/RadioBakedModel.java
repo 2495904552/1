@@ -1,4 +1,4 @@
-package indi.mobilegear.client;
+package sgr792.craftxmap.client;
 
 import java.util.List;
 import javax.annotation.Nullable;

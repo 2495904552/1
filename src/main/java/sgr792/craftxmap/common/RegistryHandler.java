@@ -1,6 +1,7 @@
-package indi.mobilegear.common;
+package sgr792.craftxmap.common;
 
-import java.util.ArrayList;
+import
+        java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,7 +15,6 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @EventBusSubscriber(modid = "mobilegear")
 public class RegistryHandler {

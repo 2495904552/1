@@ -1,4 +1,4 @@
-package indi.mobilegear.common.items;
+package sgr792.craftxmap.common.items;
 
 import net.minecraft.item.Item;
 

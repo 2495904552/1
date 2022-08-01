@@ -1,4 +1,4 @@
-package indi.mobilegear.client.util;
+package sgr792.craftxmap.client.util;
 
 import java.util.function.UnaryOperator;
 import net.minecraft.client.renderer.BufferBuilder;

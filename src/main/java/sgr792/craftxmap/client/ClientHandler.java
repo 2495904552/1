@@ -1,6 +1,6 @@
-package indi.mobilegear.client;
+package sgr792.craftxmap.client;
 
-import indi.mobilegear.MobileGearMod;
+import sgr792.craftxmap.CraftxMapMod;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.registries.IForgeRegistryEntry;
+import sgr792.craftxmap.common.items.ItemRadio;
 
 @EventBusSubscriber(value = {Side.CLIENT}, modid = "mobilegear")
 public class ClientHandler {
@@ -45,7 +45,7 @@ public class ClientHandler {
       if (entityPlayerSP != null && ((EntityPlayer)entityPlayerSP).world != null) {
         ItemStack stack = null;
         for (ItemStack is : ((EntityPlayer)entityPlayerSP).inventory.mainInventory) {
-          if (is.getItem() instanceof indi.mobilegear.common.items.ItemRadio) {
+          if (is.getItem() instanceof ItemRadio) {
             stack = is;
             break;
           } 
@@ -73,7 +73,7 @@ public class ClientHandler {
                     if (!chanStr.isEmpty())
                       if (channel == Integer.parseInt(chanStr)) {
                         event.setMessage((ITextComponent)new TextComponentString(event.getMessage().getFormattedText()));
-                        entityPlayerSP.playSound(MobileGearMod.soundEvents.getSend(), 1.0F, 1.0F);
+                        entityPlayerSP.playSound(CraftxMapMod.soundEvents.getSend(), 1.0F, 1.0F);
                       } else {
                         event.setCanceled(true);
                       }  
@@ -94,7 +94,7 @@ public class ClientHandler {
     if (entityPlayerSP != null && ((EntityPlayer)entityPlayerSP).world != null) {
       ItemStack stack = null;
       for (ItemStack is : ((EntityPlayer)entityPlayerSP).inventory.mainInventory) {
-        if (is.getItem() instanceof indi.mobilegear.common.items.ItemRadio) {
+        if (is.getItem() instanceof ItemRadio) {
           stack = is;
           break;
         } 
@@ -108,7 +108,7 @@ public class ClientHandler {
         if (nbt.hasKey("Switch"))
           switchOn = nbt.getBoolean("Switch"); 
         if (switchOn && event.getMessage().indexOf("/") == -1) {
-          entityPlayerSP.playSound(MobileGearMod.soundEvents.getOpen(), 1.0F, 1.0F);
+          entityPlayerSP.playSound(CraftxMapMod.soundEvents.getOpen(), 1.0F, 1.0F);
           event.setCanceled(false);
           return;
         } 
@@ -118,13 +118,13 @@ public class ClientHandler {
   
   @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
   public void registerSoundEvents(RegistryEvent.Register<SoundEvent> event) {
-    event.getRegistry().registerAll(new SoundEvent[] { MobileGearMod.soundEvents.getBattery(), MobileGearMod.soundEvents
-          .getBeep(), MobileGearMod.soundEvents
-          .getLowPower(), MobileGearMod.soundEvents
-          .getOpen(), MobileGearMod.soundEvents
-          .getSend(), MobileGearMod.soundEvents
-          .getTuning(), MobileGearMod.soundEvents
-          .getTurn_off(), MobileGearMod.soundEvents
+    event.getRegistry().registerAll(new SoundEvent[] { CraftxMapMod.soundEvents.getBattery(), CraftxMapMod.soundEvents
+          .getBeep(), CraftxMapMod.soundEvents
+          .getLowPower(), CraftxMapMod.soundEvents
+          .getOpen(), CraftxMapMod.soundEvents
+          .getSend(), CraftxMapMod.soundEvents
+          .getTuning(), CraftxMapMod.soundEvents
+          .getTurn_off(), CraftxMapMod.soundEvents
           .getTurn_on() });
   }
   
