@@ -128,8 +128,8 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
           return; 
         (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/map.png"));
         map3d.renderNormal(Tessellator.getInstance().getBuffer());
-        double width = 0.24D, height = 0.24D;
-        GlStateManager.translate(0.69D, 0.8D, -0.58D);
+        double width = 0.1D, height = 0.1D;//指南针大小
+        GlStateManager.translate(-0.12D, 0.8D, -0.58D);//指南针位置
         (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/compass_base.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, 180.0D, false, true, 770, 771, true);
         GlStateManager.translate(0.0D, 0.0D, -1.0E-5D);
@@ -137,7 +137,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
         (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/compass_ns.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, (360.0F + ((EntityPlayer)entityPlayerSP).rotationYaw), false, true, 770, 771, true);
         GlStateManager.enableLighting();
-        GlStateManager.translate(0.0D, 0.0D, -1.0E-5D);
+        GlStateManager.translate(0.D, 0.0D, -1.0E-5D);
         (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/compass_center.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, 180.0D, false, true, 770, 771, true);
         GlStateManager.translate(0.0D, 0.0D, -1.0E-5D);
@@ -147,7 +147,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
         GlStateManager.translate(-0.3F, 1.2F, 0.6F);
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(scaleMap, scaleMap, scaleMap);
-        double fixScale = 1.0D;
+        double fixScale = 1.0D;//玩家位置图标大小
         drawAddtionLayers(0.0D, 0.0D);
         GlStateManager.translate(180.5D, 131.0D, -0.03999999910593033D);
         width = 6.0D;

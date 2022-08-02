@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "mobilegear:items/map"
+        "layer0": "mobilegear:items/mapicon"
     }
 }
