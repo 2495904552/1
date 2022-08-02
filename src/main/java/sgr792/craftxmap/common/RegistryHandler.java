@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 
-@EventBusSubscriber(modid = "mobilegear")
+@EventBusSubscriber(modid = "craftxmap")
 public class RegistryHandler {
   public static List<Block> BLOCKS = new ArrayList<>();
   

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "mobilegear:items/battery"
+        "layer0": "craftxmap:items/battery"
     }
 }

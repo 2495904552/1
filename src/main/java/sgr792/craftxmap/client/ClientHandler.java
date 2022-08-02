@@ -25,14 +25,14 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import sgr792.craftxmap.common.items.ItemRadio;
 
-@EventBusSubscriber(value = {Side.CLIENT}, modid = "mobilegear")
+@EventBusSubscriber(value = {Side.CLIENT}, modid = "craftxmap")
 public class ClientHandler {
   @SubscribeEvent
   public static void onModelBakeEvent(ModelBakeEvent event) {
     Iterator<ModelResourceLocation> iter = event.getModelRegistry().getKeys().iterator();
     while (iter.hasNext()) {
       ModelResourceLocation key = iter.next();
-      if (key.getResourceDomain().equals("mobilegear"))
+      if (key.getResourceDomain().equals("craftxmap"))
         if (key.getResourcePath().contains("radio") || key.getResourcePath().contains("map3d"))
           event.getModelRegistry().putObject(key, new RadioBakedModel((IBakedModel)event.getModelRegistry().getObject(key)));  
     } 

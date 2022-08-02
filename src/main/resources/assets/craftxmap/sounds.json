@@ -2,49 +2,49 @@
   "turn_off": {
     "category": "player",
     "sounds": [
-      "mobilegear:turn_off"
+      "craftxmap:turn_off"
     ]
   },
   "turn_on": {
     "category": "player",
     "sounds": [
-      "mobilegear:turn_on"
+      "craftxmap:turn_on"
     ]
   },
   "battery": {
     "category": "player",
     "sounds": [
-      "mobilegear:battery"
+      "craftxmap:battery"
     ]
   },
   "lowpower": {
     "category": "player",
     "sounds": [
-      "mobilegear:lowpower"
+      "craftxmap:lowpower"
     ]
   },
   "send": {
     "category": "player",
     "sounds": [
-      "mobilegear:send"
+      "craftxmap:send"
     ]
   },
   "open": {
     "category": "player",
     "sounds": [
-      "mobilegear:open"
+      "craftxmap:open"
     ]
   },
   "beep": {
     "category": "player",
     "sounds": [
-      "mobilegear:beep"
+      "craftxmap:beep"
     ]
   },
   "tuning": {
     "category": "player",
     "sounds": [
-      "mobilegear:tuning"
+      "craftxmap:tuning"
     ]
   }
 }

@@ -4,7 +4,7 @@ import com.google.common.io.Files;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import sgr792.craftxmap.client.ClientHandler;
-import sgr792.craftxmap.client.MobileGearModelLoader;
+import sgr792.craftxmap.client.craftxmapModelLoader;
 import sgr792.craftxmap.client.mobileTEISR;
 import sgr792.craftxmap.common.RegistryHandler;
 import sgr792.craftxmap.common.items.ItemMap3D;
@@ -28,13 +28,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = "mobilegear", name = "Craftx Map Mod", version = "1.0", acceptedMinecraftVersions = "[1.12.2]")
+@Mod(modid = "craftxmap", name = "Craftx Map Mod", version = "1.0", acceptedMinecraftVersions = "[1.12.2]")
 public class CraftxMapMod {
   public static final File MinecraftDirectory = getMinecraftDirectory();
   
   public static final String DEV_MINECRAFT_DIR = "run/";
   
-  public static final String MODID = "mobilegear";
+  public static final String MODID = "craftxmap";
   
   public static final String NAME = "Craftx Map Mod";
   
@@ -62,21 +62,21 @@ public class CraftxMapMod {
   }
   
   public class SoundEvents {
-    SoundEvent lowPower = new SoundEvent(new ResourceLocation("mobilegear", "lowPower"));
+    SoundEvent lowPower = new SoundEvent(new ResourceLocation("craftxmap", "lowPower"));
     
-    SoundEvent turn_off = new SoundEvent(new ResourceLocation("mobilegear", "turn_off"));
+    SoundEvent turn_off = new SoundEvent(new ResourceLocation("craftxmap", "turn_off"));
     
-    SoundEvent turn_on = new SoundEvent(new ResourceLocation("mobilegear", "turn_on"));
+    SoundEvent turn_on = new SoundEvent(new ResourceLocation("craftxmap", "turn_on"));
     
-    SoundEvent battery = new SoundEvent(new ResourceLocation("mobilegear", "battery"));
+    SoundEvent battery = new SoundEvent(new ResourceLocation("craftxmap", "battery"));
     
-    SoundEvent send = new SoundEvent(new ResourceLocation("mobilegear", "send"));
+    SoundEvent send = new SoundEvent(new ResourceLocation("craftxmap", "send"));
     
-    SoundEvent open = new SoundEvent(new ResourceLocation("mobilegear", "open"));
+    SoundEvent open = new SoundEvent(new ResourceLocation("craftxmap", "open"));
     
-    SoundEvent beep = new SoundEvent(new ResourceLocation("mobilegear", "beep"));
+    SoundEvent beep = new SoundEvent(new ResourceLocation("craftxmap", "beep"));
     
-    SoundEvent tuning = new SoundEvent(new ResourceLocation("mobilegear", "tuning"));
+    SoundEvent tuning = new SoundEvent(new ResourceLocation("craftxmap", "tuning"));
     
     public SoundEvents() {
       this.lowPower.setRegistryName(this.lowPower.getSoundName());
@@ -123,8 +123,8 @@ public class CraftxMapMod {
   }
   
   public void initClient() {
-    OBJLoader.INSTANCE.addDomain("mobilegear");
-    ModelLoaderRegistry.registerLoader((ICustomModelLoader)new MobileGearModelLoader());
+    OBJLoader.INSTANCE.addDomain("craftxmap");
+    ModelLoaderRegistry.registerLoader((ICustomModelLoader)new craftxmapModelLoader());
     ITEM_RADIO.setTileEntityItemStackRenderer((TileEntityItemStackRenderer)new mobileTEISR());
     ITEM_MAP.setTileEntityItemStackRenderer((TileEntityItemStackRenderer)new mobileTEISR());
     MinecraftForge.EVENT_BUS.register(new ClientHandler());
@@ -144,14 +144,14 @@ public class CraftxMapMod {
   }
   
   public void readConfig() {
-    File mobilegear = new File(new File(MinecraftDirectory, "config"), "mobilegear.json");
+    File craftxmap = new File(new File(MinecraftDirectory, "config"), "craftxmap.json");
     try {
-      if (!mobilegear.exists()) {
-        mobilegear.createNewFile();
-        Files.write((new Config()).toString(), mobilegear, StandardCharsets.UTF_8);
+      if (!craftxmap.exists()) {
+        craftxmap.createNewFile();
+        Files.write((new Config()).toString(), craftxmap, StandardCharsets.UTF_8);
         config = new Config();
       } else {
-        config = config.fromString(Files.toString(mobilegear, StandardCharsets.UTF_8));
+        config = config.fromString(Files.toString(craftxmap, StandardCharsets.UTF_8));
       } 
     } catch (Exception e) {
       e.printStackTrace();

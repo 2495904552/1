@@ -42,12 +42,12 @@ public class ItemRadio extends Item {
       state = nbt.getBoolean("Switch"); 
     if (nbt != null && nbt.hasKey("Battery")) {
       int battery = nbt.getInteger("Battery");
-      tooltip.add(((battery > 10 && state) ? "§2" : "") + (new TextComponentTranslation("mobilegear:electricity", new Object[0])).getFormattedText() + " " + battery);
+      tooltip.add(((battery > 10 && state) ? "§2" : "") + (new TextComponentTranslation("craftxmap:electricity", new Object[0])).getFormattedText() + " " + battery);
     } else {
-      tooltip.add((new TextComponentTranslation("mobilegear:electricity", new Object[0])).getFormattedText() + " 0");
+      tooltip.add((new TextComponentTranslation("craftxmap:electricity", new Object[0])).getFormattedText() + " 0");
     } 
-    tooltip.add((new TextComponentTranslation("mobilegear:shift", new Object[0])).getFormattedText());
-    tooltip.add((new TextComponentTranslation("mobilegear:chan", new Object[0])).getFormattedText());
+    tooltip.add((new TextComponentTranslation("craftxmap:shift", new Object[0])).getFormattedText());
+    tooltip.add((new TextComponentTranslation("craftxmap:chan", new Object[0])).getFormattedText());
   }
   
   public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {

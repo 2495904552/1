@@ -101,7 +101,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
     Minecraft mc = Minecraft.getMinecraft();
     double fontScale = 0.0015D;
     boolean isMap = true;
-    if (itemStackIn.getItem().getRegistryName().toString().equals("mobilegear:radio"))
+    if (itemStackIn.getItem().getRegistryName().toString().equals("craftxmap:radio"))
       isMap = false; 
     EntityPlayerSP entityPlayerSP = (Minecraft.getMinecraft()).player;
     checkModelFile();
@@ -126,19 +126,19 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
         GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
         if (map3d == null)
           return; 
-        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/map.png"));
+        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/map.png"));
         map3d.renderNormal(Tessellator.getInstance().getBuffer());
         double width = 0.1D, height = 0.1D;//指南针大小
         GlStateManager.translate(-0.12D, 0.8D, -0.58D);//指南针位置
-        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/compass_base.png"));
+        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/compass_base.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, 180.0D, false, true, 770, 771, true);
         GlStateManager.translate(0.0D, 0.0D, -1.0E-5D);
         GlStateManager.disableLighting();
-        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/compass_ns.png"));
+        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/compass_ns.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, (360.0F + ((EntityPlayer)entityPlayerSP).rotationYaw), false, true, 770, 771, true);
         GlStateManager.enableLighting();
         GlStateManager.translate(0.D, 0.0D, -1.0E-5D);
-        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/compass_center.png"));
+        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/compass_center.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, 180.0D, false, true, 770, 771, true);
         GlStateManager.translate(0.0D, 0.0D, -1.0E-5D);
         GlStateManager.popMatrix();
@@ -154,7 +154,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
         height = 6.0D;
         GlStateManager.disableLighting();
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
-        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/tri2.png"));
+        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/tri2.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width * fixScale / 2.0D, 0.0D - height * fixScale / 2.0D, width * fixScale, height * fixScale, 0.0D, 0.0D, 1.0D, 1.0D, (((EntityPlayer)entityPlayerSP).rotationYaw + 180.0F - 45.0F), false, true, 770, 771, true);
         GlStateManager.translate(0.0F, 0.0F, -0.01F);
         width = 36.0D;
@@ -184,7 +184,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
             channel = nbt.getInteger("Channel"); 
         } 
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/radio.png"));
+        (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/radio.png"));
         radio.renderNormal(Tessellator.getInstance().getBuffer(), jumpList, -1);
         if (switchOn) {
           if (charge >= 70) {
@@ -230,22 +230,22 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
           Minecraft.getMinecraft().getRenderManager().getFontRenderer().drawString((int)((EntityPlayer)entityPlayerSP).posZ + "", 21, 75, fontColor);
           Minecraft.getMinecraft().getRenderManager().getFontRenderer().drawString(channel + "", 26, 100, fontColor);
           GL11.glPopMatrix();
-          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/radio.png"));
+          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/radio.png"));
           OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 200.0F + charge / 100.0F * 40.0F, 200.0F + charge / 100.0F * 40.0F);
           GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/bg_on.png"));
+          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/bg_on.png"));
           radio.renderNormal(Tessellator.getInstance().getBuffer(), null, 37);
           GlStateManager.scale(0.1D, 0.1D, 0.1D);
           GlStateManager.translate(-4.01D, 4.47D, -2.58D);
           double width = 0.3D, height = 0.3D;
-          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/tri4.png"));
+          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/tri4.png"));
           drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, (((EntityPlayer)entityPlayerSP).rotationYaw - 45.0F), false, true, 770, 771, true);
         } else {
           radio.renderNormal(Tessellator.getInstance().getBuffer(), null, 61);
           radio.renderNormal(Tessellator.getInstance().getBuffer(), null, 65);
           radio.renderNormal(Tessellator.getInstance().getBuffer(), null, 63);
           GlStateManager.color(0.5F, 0.5F, 0.5F, 1.0F);
-          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/bg_off.png"));
+          (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/bg_off.png"));
           radio.renderNormal(Tessellator.getInstance().getBuffer(), null, 37);
         } 
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
@@ -257,7 +257,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
       GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
       if (map3d == null)
         return; 
-      (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/map.png"));
+      (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/map.png"));
       map3d.renderNormal(Tessellator.getInstance().getBuffer());
     } else {
       double scale = 0.5D;
@@ -267,7 +267,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
       GlStateManager.rotate(-20.0F, 0.0F, 1.0F, 0.0F);
       GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
       GlStateManager.scale(scale, scale, scale);
-      (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("mobilegear:textures/items/radio.png"));
+      (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/radio.png"));
       radio.renderNormal(Tessellator.getInstance().getBuffer(), null, -1);
     } 
     GL11.glPopMatrix();
@@ -568,8 +568,8 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
   
   public void checkModelFile() {
     if (map3d == null)
-      map3d = MobileGearModelLoader.loader.getModel("map3d"); 
+      map3d = craftxmapModelLoader.loader.getModel("map3d"); 
     if (radio == null)
-      radio = MobileGearModelLoader.loader.getModel("radio");
+      radio = craftxmapModelLoader.loader.getModel("radio");
   }
 }

@@ -31,7 +31,7 @@ public class ObjModelLoader {
     IResource iresource = null;
 
     try {
-      ResourceLocation rl = new ResourceLocation("mobilegear", "models/" + path + "/" + fileName + ".obj");
+      ResourceLocation rl = new ResourceLocation("craftxmap", "models/" + path + "/" + fileName + ".obj");
       if (rl.getResourcePath().endsWith(".obj")) {
         iresource = this.resourceManager.getResource(new ResourceLocation(rl.getResourceDomain(), rl.getResourcePath()));
         reader = new InputStreamReader(iresource.getInputStream(), StandardCharsets.UTF_8);
