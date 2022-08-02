@@ -129,7 +129,7 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
         (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/map.png"));
         map3d.renderNormal(Tessellator.getInstance().getBuffer());
         double width = 0.1D, height = 0.1D;//指南针大小
-        GlStateManager.translate(-0.12D, 0.8D, -0.58D);//指南针位置
+        GlStateManager.translate(-0.12D, 0.79D, -0.58D);//指南针位置
         (Minecraft.getMinecraft()).renderEngine.bindTexture(new ResourceLocation("craftxmap:textures/items/compass_base.png"));
         drawQuad((ResourceLocation)null, 16777215, 1.0F, 0.0D - width / 2.0D, 0.0D - height / 2.0D, width, height, 0.0D, 0.0D, 1.0D, 1.0D, 180.0D, false, true, 770, 771, true);
         GlStateManager.translate(0.0D, 0.0D, -1.0E-5D);
@@ -296,8 +296,8 @@ public class mobileTEISR extends TileEntityItemStackRenderer {
     Minecraft mc = Minecraft.getMinecraft();
     EntityPlayerSP player = mc.player;
     int intValue = zoomValue;
-    int aWidth = 330;//3D地图宽度
-    int aHeight = 246;//3D地图高度
+    int aWidth = 336;//3D地图宽度
+    int aHeight = 250;//3D地图高度
     int Wx = 0, Wz = 0;
     int x1 = (int)player.posX - aWidth / 2;
     int z1 = (int)player.posZ - aHeight / 2;
