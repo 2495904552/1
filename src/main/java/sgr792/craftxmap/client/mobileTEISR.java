@@ -1,7 +1,7 @@
 package sgr792.craftxmap.client;
 
 import sgr792.craftxmap.CraftxMapMod;
-import sgr792.craftxmap.client.util.abstractObjModel;
+import sgr792.craftxmap.client.util.AbstractObjModel;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -53,9 +53,9 @@ import org.lwjgl.opengl.GL11;
 public class mobileTEISR extends TileEntityItemStackRenderer {
   public static ItemCameraTransforms.TransformType transformType = ItemCameraTransforms.TransformType.THIRD_PERSON_RIGHT_HAND;
   
-  private static abstractObjModel map3d = null;
+  private static AbstractObjModel map3d = null;
   
-  private static abstractObjModel radio = null;
+  private static AbstractObjModel radio = null;
 
   private static final GridRenderer gridRenderer = new GridRenderer(Context.UI.Minimap, 3);
   

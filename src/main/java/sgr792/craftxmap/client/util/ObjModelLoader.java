@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 
 public class ObjModelLoader {
-  private Map<String, abstractObjModel> models = new HashMap();
+  private Map<String, AbstractObjModel> models = new HashMap();
   private IResourceManager resourceManager;
 
   public ObjModelLoader(IResourceManager resourceManagerIn) {
@@ -50,7 +50,7 @@ public class ObjModelLoader {
     return this.models.size();
   }
 
-  public abstractObjModel getModel(String name) {
-    return (abstractObjModel)this.models.get(name);
+  public AbstractObjModel getModel(String name) {
+    return (AbstractObjModel)this.models.get(name);
   }
 }

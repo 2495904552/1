@@ -16,7 +16,7 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.Vec3d;
 
-public class ObjModel extends abstractObjModel {
+public class ObjModel extends AbstractObjModel {
     private Map<String, List<Face>> faces;
 
     public ObjModel(BufferedReader bufferedReader) throws IOException {

@@ -4,8 +4,8 @@ import java.util.function.UnaryOperator;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.util.math.Vec2f;
 
-public abstract class abstractObjModel {
-  public abstractObjModel() {
+public abstract class AbstractObjModel {
+  public AbstractObjModel() {
   }
 
   public abstract boolean renderNormal(String var1, BufferBuilder var2);
