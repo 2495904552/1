@@ -73,21 +73,20 @@ public class ClientHandler {
                     if (!chanStr.isEmpty())
                       if (channel == Integer.parseInt(chanStr)) {
                         event.setMessage((ITextComponent)new TextComponentString(event.getMessage().getFormattedText()));
-                        entityPlayerSP.playSound(CraftxMapMod.soundEvents.getSend(), 1.0F, 1.0F);
                       } else {
                         event.setCanceled(true);
-                      }  
-                  } 
-                } 
-              } 
+                      }
+                  }
+                }
+              }
             } catch (Exception e) {
               e.printStackTrace();
-            }  
-        } 
-      } 
-    } 
+            }
+        }
+      }
+    }
   }
-  
+
   @SubscribeEvent
   public static void onChatEvent(ClientChatEvent event) {
     EntityPlayerSP entityPlayerSP = (Minecraft.getMinecraft()).player;
@@ -97,35 +96,22 @@ public class ClientHandler {
         if (is.getItem() instanceof ItemRadio) {
           stack = is;
           break;
-        } 
-      } 
+        }
+      }
       if (stack != null && stack.hasTagCompound()) {
         boolean switchOn = false;
         int channel = 1;
         NBTTagCompound nbt = stack.getTagCompound();
         if (nbt.hasKey("Channel"))
-          channel = nbt.getInteger("Channel"); 
+          channel = nbt.getInteger("Channel");
         if (nbt.hasKey("Switch"))
-          switchOn = nbt.getBoolean("Switch"); 
+          switchOn = nbt.getBoolean("Switch");
         if (switchOn && event.getMessage().indexOf("/") == -1) {
-          entityPlayerSP.playSound(CraftxMapMod.soundEvents.getOpen(), 1.0F, 1.0F);
           event.setCanceled(false);
           return;
-        } 
-      } 
-    } 
-  }
-  
-  @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-  public void registerSoundEvents(RegistryEvent.Register<SoundEvent> event) {
-    event.getRegistry().registerAll(new SoundEvent[] { CraftxMapMod.soundEvents.getBattery(), CraftxMapMod.soundEvents
-          .getBeep(), CraftxMapMod.soundEvents
-          .getLowPower(), CraftxMapMod.soundEvents
-          .getOpen(), CraftxMapMod.soundEvents
-          .getSend(), CraftxMapMod.soundEvents
-          .getTuning(), CraftxMapMod.soundEvents
-          .getTurn_off(), CraftxMapMod.soundEvents
-          .getTurn_on() });
+        }
+      }
+    }
   }
   
   public static String chanRegx = "\\[ch:\\d+\\]";

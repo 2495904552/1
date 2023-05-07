@@ -9,21 +9,21 @@ import net.minecraftforge.client.model.obj.OBJLoader;
 
 public class craftxmapModelLoader implements ICustomModelLoader {
   public static ObjModelLoader loader;
-  
+
   public void onResourceManagerReload(IResourceManager resourceManager) {
     OBJLoader.INSTANCE.onResourceManagerReload(resourceManager);
     loader = new ObjModelLoader(resourceManager);
   }
-  
+
   public boolean accepts(ResourceLocation modelLocation) {
     if (modelLocation.getResourceDomain().equals("craftxmap"));
     if (modelLocation.getResourceDomain().equals("craftxmap") && modelLocation.getResourcePath().contains("models/item/")) {
       System.out.println("accepts: " + modelLocation.getResourcePath());
       return false;
-    } 
+    }
     return false;
   }
-  
+
   public IModel loadModel(ResourceLocation modelLocation) throws Exception {
     return null;
   }

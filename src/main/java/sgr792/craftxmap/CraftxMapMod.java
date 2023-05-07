@@ -31,23 +31,23 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 @Mod(modid = "craftxmap", name = "Craftx Map Mod", version = "1.0", acceptedMinecraftVersions = "[1.12.2]")
 public class CraftxMapMod {
   public static final File MinecraftDirectory = getMinecraftDirectory();
-  
+
   public static final String DEV_MINECRAFT_DIR = "run/";
-  
+
   public static final String MODID = "craftxmap";
-  
+
   public static final String NAME = "Craftx Map Mod";
-  
+
   public static final String VERSION = "1.0";
-  
+
   public static ItemRadio ITEM_RADIO;
-  
+
   public static ItemMap3D ITEM_MAP;
-  
+
   public static Config config;
-  
+
   public static SoundEvents soundEvents;
-  
+
   @EventHandler
   public void preInit(FMLPreInitializationEvent event) {
     config = new Config();
@@ -60,24 +60,24 @@ public class CraftxMapMod {
     RegistryHandler.ITEMS.add(((Item)ITEM_RADIO.setRegistryName("radio")).setUnlocalizedName("radio"));
     RegistryHandler.ITEMS.add(((Item)ITEM_MAP.setRegistryName("map3d")).setUnlocalizedName("map3d"));
   }
-  
+
   public class SoundEvents {
     SoundEvent lowPower = new SoundEvent(new ResourceLocation("craftxmap", "lowPower"));
-    
+
     SoundEvent turn_off = new SoundEvent(new ResourceLocation("craftxmap", "turn_off"));
-    
+
     SoundEvent turn_on = new SoundEvent(new ResourceLocation("craftxmap", "turn_on"));
-    
+
     SoundEvent battery = new SoundEvent(new ResourceLocation("craftxmap", "battery"));
-    
+
     SoundEvent send = new SoundEvent(new ResourceLocation("craftxmap", "send"));
-    
+
     SoundEvent open = new SoundEvent(new ResourceLocation("craftxmap", "open"));
-    
+
     SoundEvent beep = new SoundEvent(new ResourceLocation("craftxmap", "beep"));
-    
+
     SoundEvent tuning = new SoundEvent(new ResourceLocation("craftxmap", "tuning"));
-    
+
     public SoundEvents() {
       this.lowPower.setRegistryName(this.lowPower.getSoundName());
       this.turn_off.setRegistryName(this.turn_off.getSoundName());
@@ -88,40 +88,40 @@ public class CraftxMapMod {
       this.beep.setRegistryName(this.beep.getSoundName());
       this.tuning.setRegistryName(this.tuning.getSoundName());
     }
-    
+
     public SoundEvent getLowPower() {
       return this.lowPower;
     }
-    
+
     public SoundEvent getTurn_off() {
       return this.turn_off;
     }
-    
+
     public SoundEvent getTurn_on() {
       return this.turn_on;
     }
-    
+
     public SoundEvent getBattery() {
       return this.battery;
     }
-    
+
     public SoundEvent getSend() {
       return this.send;
     }
-    
+
     public SoundEvent getOpen() {
       return this.open;
     }
-    
+
     public SoundEvent getBeep() {
       return this.beep;
     }
-    
+
     public SoundEvent getTuning() {
       return this.tuning;
     }
   }
-  
+
   public void initClient() {
     OBJLoader.INSTANCE.addDomain("craftxmap");
     ModelLoaderRegistry.registerLoader((ICustomModelLoader)new craftxmapModelLoader());
@@ -129,20 +129,23 @@ public class CraftxMapMod {
     ITEM_MAP.setTileEntityItemStackRenderer((TileEntityItemStackRenderer)new mobileTEISR());
     MinecraftForge.EVENT_BUS.register(new ClientHandler());
   }
-  
+
   @EventHandler
   public void init(FMLServerStartingEvent event) {}
-  
+
   @EventHandler
-  public void init(FMLInitializationEvent event) {}
-  
+  public void init(FMLInitializationEvent event) {
+    MinecraftForge.EVENT_BUS.register(new craftxmapModelLoader());
+    // ...
+  }
+
   public static File getMinecraftDirectory() {
     Minecraft minecraft = FMLClientHandler.instance().getClient();
     if (minecraft != null)
-      return minecraft.mcDataDir; 
+      return minecraft.mcDataDir;
     return new File("run/");
   }
-  
+
   public void readConfig() {
     File craftxmap = new File(new File(MinecraftDirectory, "config"), "craftxmap.json");
     try {
@@ -152,30 +155,30 @@ public class CraftxMapMod {
         config = new Config();
       } else {
         config = config.fromString(Files.toString(craftxmap, StandardCharsets.UTF_8));
-      } 
+      }
     } catch (Exception e) {
       e.printStackTrace();
-    } 
+    }
   }
-  
+
   public class Config {
     int battery_time = 12000;
-    
+
     int battery_warning = 2000;
-    
+
     public int getBattery_time() {
       return this.battery_time;
     }
-    
+
     public int getBattery_warning() {
       return this.battery_warning;
     }
-    
+
     public String toString() {
       Gson GSON = (new GsonBuilder()).setVersion(3.0D).create();
       return GSON.toJson(this);
     }
-    
+
     public Config fromString(String json) {
       Gson GSON = (new GsonBuilder()).setVersion(3.0D).create();
       return (Config)GSON.fromJson(json, Config.class);
